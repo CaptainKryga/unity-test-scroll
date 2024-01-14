@@ -11,7 +11,6 @@ namespace Project.Scripts.Controller
 		[SerializeField] private Database _database;
 		[SerializeField] private ViewMessage _prefab;
 
-		private int[] _nowDate;
 		private void OnEnable()
 		{
 			ManagerApp.Instance.Listen(Types.App.SwitchTrainer, FuncSwitchTrainer);
@@ -24,11 +23,6 @@ namespace Project.Scripts.Controller
 
 		private void Start()
 		{
-			_nowDate = new int[3];
-			_nowDate[0] = DateTime.Now.Day;
-			_nowDate[1] = DateTime.Now.Month;
-			_nowDate[2] = DateTime.Now.Year;
-			
 			ManagerApp.Instance.Push(Types.App.SwitchTrainer, Types.Trainer.None);
 		}
 
